@@ -3,11 +3,10 @@ import 'package:flutter_learn_getx/pages/home/home_controller.dart';
 import 'package:flutter_learn_getx/service/dummy_service.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
-    final service = Get.put(ApiService());
-    final homeController = Get.put(HomeController());
+    final service = Get.find<ApiService>();
 
     return Scaffold(
       appBar: AppBar(
@@ -44,9 +43,9 @@ class HomeScreen extends StatelessWidget {
         () => FloatingActionButton.extended(
           onPressed: () {
             // Add your onPressed code here!
-            homeController.increment();
+            controller.increment();
           },
-          label: Text('Count ${homeController.count}'),
+          label: Text('Count ${controller.count}'),
           icon: const Icon(Icons.plus_one),
           backgroundColor: Colors.green,
         ),
