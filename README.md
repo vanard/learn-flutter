@@ -1,4 +1,4 @@
-# flutter_learn_getx
+# flutter
 
 A new Flutter project.
 
