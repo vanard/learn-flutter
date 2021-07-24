@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn_getx/pages/detail_screen.dart';
 import 'package:get/get.dart';
 
-import 'pages/home_screen.dart';
+import 'pages/home/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       getPages: [

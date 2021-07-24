@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn_getx/pages/detail_screen.dart';
+import 'package:flutter_learn_getx/pages/home/home_controller.dart';
 import 'package:flutter_learn_getx/service/dummy_service.dart';
 import 'package:get/get.dart';
 
@@ -7,6 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final service = Get.put(ApiService());
+    final homeController = Get.put(HomeController());
 
     return Scaffold(
       appBar: AppBar(
@@ -35,8 +36,19 @@ class HomeScreen extends StatelessWidget {
                 primary: Colors.white,
                 textStyle: TextStyle(fontSize: 20),
               ),
-            )
+            ),
           ],
+        ),
+      ),
+      floatingActionButton: Obx(
+        () => FloatingActionButton.extended(
+          onPressed: () {
+            // Add your onPressed code here!
+            homeController.increment();
+          },
+          label: Text('Count ${homeController.count}'),
+          icon: const Icon(Icons.plus_one),
+          backgroundColor: Colors.green,
         ),
       ),
     );
