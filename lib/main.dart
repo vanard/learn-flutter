@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn_getx/pages/detail_screen.dart';
 import 'package:get/get.dart';
 
-import 'home_screen.dart';
+import 'pages/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeScreen(),
+      getPages: [
+        GetPage(name: '/home', page: ()=> HomeScreen()),
+        GetPage(name: '/detail', page: ()=> DetailScreen()),
+      ],
+      initialRoute: '/home',
     );
   }
 }
