@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn_getx/pages/detail_screen.dart';
 import 'package:flutter_learn_getx/pages/home/home_binding.dart';
+import 'package:flutter_learn_getx/pages/login/login_screen.dart';
 import 'package:get/get.dart';
 
 import 'pages/home/home_screen.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/home', page: ()=> HomeScreen(), binding: HomeBinding()),
         GetPage(name: '/detail', page: ()=> DetailScreen(), transition: Transition.cupertino),
+        GetPage(name: '/login', page: ()=> LoginScreen(), transition: Transition.cupertino),
       ],
       initialRoute: '/home',
     );
